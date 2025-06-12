@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Literacy Campaign</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f8fb;
+    }
+    header {
+      background-color: #011023;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    .tagline {
+      margin-top: 8px;
+      font-size: 18px;
+      font-style: italic;
+      color: #ffe600;
+    }
+    nav {
+      background-color: #597ea2;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    nav a i {
+      margin-right: 6px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    iframe {
+      border: none;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      height: 500px;
+      margin-top: 20px;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+    /* Equal card height setup */
+    .card-equal {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Header -->
+  <header>
+    <h1 class="text-3xl font-bold">Welcome to the Digital Literacy Program</h1>
+    <p class="tagline">Empowering Digital Literacy!</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="tutorials.html"><i class="fas fa-book"></i> Tutorials</a>
+    <a href="chatbot.html"><i class="fas fa-robot"></i> AI Chatbot</a>
+    <a href="#feedback"><i class="fas fa-comment-dots"></i> Feedback</a>
+  </nav>
+
+  <!-- Welcome -->
+  <main>
+    <p class="text-lg mb-4">📱 Learn how to use WhatsApp, Paytm, Google Maps, and more!</p>
+    <p class="text-md text-gray-600">Ask questions to our AI Chatbot or explore step-by-step guides.</p>
+  </main>
+
+  <!-- Cards Section -->
+  <section class="py-12 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Explore Digital Tools</h2>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- WhatsApp Card -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition card-equal">
+        <img src="wh.jpg" alt="WhatsApp Icon" class="mx-auto mb-4">
+        <h3 class="text-xl font-bold text-green-600 mb-2">WhatsApp: Use Smartly!</h3>
+        <p class="text-gray-600 text-sm mb-4">
+          Papa Mummy, ek hi story 2-2 baar lagana band karo!  
+          Learn how to spot fake news and forward responsibly.
+        </p>
+        <button class="mt-auto bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full">
+          Explore WhatsApp Tips
+        </button>
+      </div>
+
+      <!-- Paytm Card -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition card-equal">
+        <img src="patym.png" alt="Paytm Icon" class="mx-auto mb-4">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">Paytm: Easy Payments</h3>
+        <p class="text-gray-600 text-sm mb-4">
+          Mummy, ab cash ki tension nahi!  
+          Learn to recharge, scan QR & pay bills digitally.
+        </p>
+        <button class="mt-auto bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">
+          Start Learning Paytm
+        </button>
+      </div>
+
+      <!-- Google Maps Card -->
+      <div class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition card-equal">
+        <img src="maps.png" alt="Google Maps Icon" class="mx-auto mb-4">
+        <h3 class="text-xl font-bold text-red-500 mb-2">Google Maps: Find the Way</h3>
+        <p class="text-gray-600 text-sm mb-4">
+          Mic dabaiye aur poochhiye—  
+          ‘Ghar se sabzi mandi ka rasta?’ Google Baba sab batayenge!
+        </p>
+        <button class="mt-auto bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full">
+          Navigate with Maps
+        </button>
+      </div>
+
+    </div>
+  </section>
+<!-- Feedback Section -->
+  <section id="feedback" class="bg-white py-12 px-6 max-w-4xl mx-auto mt-10 rounded-2xl shadow-md">
+  <h2 class="text-3xl font-bold text-center mb-6" style="color: #011023;">We Value Your Feedback</h2>
+  <p class="text-center text-gray-600 mb-8">Tell us what you liked or what we can improve!</p>
+
+  <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-6">
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+      <input type="text" id="name" name="name" required 
+             class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2"
+             style="--tw-ring-color: #597ea2;" />
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+      <input type="email" id="email" name="email" required 
+             class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2"
+             style="--tw-ring-color: #597ea2;" />
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Feedback</label>
+      <textarea id="message" name="message" rows="4" required 
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2"
+                style="--tw-ring-color: #597ea2;"></textarea>
+    </div>
+
+    <button type="submit" 
+            class="text-white px-6 py-2 rounded-lg transition w-full md:w-auto"
+            style="background-color: #597ea2;">
+      Submit Feedback
+    </button>
+  </form>
+</section>
+
+
+</body>
+</html>

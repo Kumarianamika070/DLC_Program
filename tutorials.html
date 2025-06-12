@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DLC Tutorials</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+    }
+    header {
+      background-color: #021e3e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card video, .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h3 {
+      margin-top: 0;
+      color: #021e3e;
+    }
+    .card-content p {
+      font-size: 14px;
+      color: #444;
+    }
+    .card-content a {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #021e3e;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .card-content a:hover {
+      background-color: #021e3e;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 Digital Tutorials</h1>
+    <p>Learn step-by-step how to use WhatsApp, Paytm, Google Maps & more!</p>
+  </header>
+
+  <div class="container">
+
+    <!-- WhatsApp Card -->
+    <div class="card">
+      <img src="wh.jpg" alt="WhatsApp" />
+      <div class="card-content">
+        <h3><i class="fab fa-whatsapp"></i> WhatsApp</h3>
+        <p>Learn how to send messages, share photos, and make video calls using WhatsApp.</p>
+        <a href="whatsapp-tutorial.html">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Paytm Card -->
+    <div class="card">
+      <img src="patym.png" alt="Paytm" />
+      <div class="card-content">
+        <h3><i class="fas fa-wallet"></i> Paytm</h3>
+        <p>Recharge, pay bills, and send money securely with this mobile wallet app.</p>
+        <a href="paytm-tutorial.html">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Google Maps Card -->
+    <div class="card">
+      <img src="maps.png" alt="Google Maps" />
+      <div class="card-content">
+        <h3><i class="fas fa-map-marked-alt"></i> Google Maps</h3>
+        <p>Find places, get directions, and explore your city with Google Maps.</p>
+        <a href="maps-tutorial.html">Learn More</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

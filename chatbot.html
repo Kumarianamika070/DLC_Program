@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DLC Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+
+    #chatbot {
+      width: 360px;
+      height: 520px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #chat-window {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bot, .user {
+      padding: 10px 15px;
+      margin: 8px 0;
+      border-radius: 20px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    .bot {
+      background-color: #e1f4e5;
+      align-self: flex-start;
+    }
+
+    .user {
+      background-color: #cfe2ff;
+      align-self: flex-end;
+    }
+
+    #chat-input-area {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 20px;
+      background-color: #0d6efd;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0a58ca;
+    }
+  </style>
+</head>
+<body>
+  <div id="chatbot">
+    <div id="chat-window">
+      <div class="bot">👋 Hi! I’m your Digital Literacy Assistant. Ask me something like "How do I send a photo on WhatsApp?"</div>
+    </div>
+    <div id="chat-input-area">
+      <input type="text" id="user-input" placeholder="Ask a question..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const faqs = {
+      "how do i send a photo on whatsapp": 
+        "1. Open WhatsApp\n2. Open a chat\n3. Tap the 📎 icon or camera\n4. Select the photo\n5. Tap Send",
+        
+      "what is google pay": 
+        "Google Pay is a digital wallet app. You can link your bank account and use it to send, receive money, and pay bills.",
+
+      "how to use paytm": 
+        "1. Open Paytm app\n2. Sign in with your number\n3. Tap 'Pay' or 'Scan QR'\n4. Link your bank for UPI",
+
+      "how to check balance in paytm": 
+        "1. Open Paytm\n2. Tap 'Passbook'\n3. Choose wallet/bank\n4. Your balance will be displayed.",
+
+      "how to use google maps": 
+        "1. Open Google Maps\n2. Search your location\n3. Tap 'Directions'\n4. Start navigation"
+    };
+
+    function sendMessage() {
+      const inputBox = document.getElementById("user-input");
+      const userText = inputBox.value.trim().toLowerCase();
+      if (!userText) return;
+
+      displayMessage(userText, 'user');
+
+      let botReply = "❓ Sorry, I don't know that yet. Try asking about WhatsApp, Paytm, or Google Maps.";
+
+      for (let question in faqs) {
+        if (userText.includes(question)) {
+          botReply = faqs[question];
+          break;
+        }
+      }
+
+      setTimeout(() => {
+        displayMessage(botReply, 'bot');
+      }, 600);
+
+      inputBox.value = "";
+    }
+
+    function displayMessage(message, sender) {
+      const chatWindow = document.getElementById("chat-window");
+      const messageDiv = document.createElement("div");
+      messageDiv.className = sender;
+      messageDiv.textContent = message;
+      chatWindow.appendChild(messageDiv);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+  </script>
+</body>
+</html>
